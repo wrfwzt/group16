@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漫展一日游</title>
+    <style>
+        <!--设置明确的宽度之后margin才有用-->
+        *{
+            box-sizing: border-box;
+        }
+        
+        .main-interface {
+            display: block;
+            width: 1200px;
+            height: 768px;
+            margin: 0 auto;
+            
+        }
+        .top-banner{
+            border: 5px solid blue;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .top-banner h1{
+            margin: 10px auto 10px auto;
+        }
+        .bg-wrapper{
+            text-align: center;
+        }
+        .key-press {
+            margin: 0 auto;
+            border: 5px solid blue;
+        }
+        .key-press .depart {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .key-press .depart a img{
+            width: 70px;
+        }
+        .key-press .randb .review{
+            float:left;
+            margin-top: 4px;
+        }
+        .key-press .randb .bag{
+            float: right;
+            margin-top: 5px;
+        }
+        .key-press .randb .bag a img{
+            display: block;
+            
+            width: 70px;
+            height: 74px;
+              
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main-interface">
+        <div class="top-banner">
+            <h1>漫展一日游</h1>
+        </div>
+        <div class="bg-wrapper">
+            <img src="picture/背景图1.png" alt="">
+        </div>
+        <div class="key-press">
+            <div class="depart">
+                <a href="ex2.html">
+                    <img src="picture/出发.png" alt="">
+                </a>
+            </div>
+
+
+            <div class="randb">
+                <div class="review">
+                    <a href="">
+                        <img src="picture/回顾.png" alt="">
+                    </a>
+                </div>
+
+                <div class="bag">
+                    <a href="">
+                        <img src="picture/背包.jpeg" alt="" >
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

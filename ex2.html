@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左右布局示例</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .left {
+            flex: 3;
+            background-color: #f0f0f0;
+            padding: 20px;
+            position: relative;
+            background-image: url("bj1.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+            background-image: url("bj2.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .right button {
+            margin: 40px;
+            padding: 20px 40px;
+            font-size: 32px;
+            border: 3px solid blue;
+            border-radius: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .right button:hover {
+            transform: scale(2);
+            background-color: yellow;
+        }
+        .left .return-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 3px solid blue;
+            border-radius: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .left .return-button:hover {
+            transform: scale(2);
+            background-color: yellow;
+        }
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            border: 5px solid black;
+            border-radius: 15px;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            transition: transform 1s, opacity 1s;
+        }
+        .image-container img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    <!-- 引入jQuery库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="left">
+        <div class="image-container">
+            <img id="image" src="res/th1.png" alt="展示图片">
+        </div>
+        <button class="return-button">返回</button>
+    </div>
+    <div class="right">
+        <button>售卖</button>
+        <button>猜谜</button>
+        <button>集邮</button>
+    </div>
+    <script>
+        $(document).ready(function() {
+            const images = [
+                "res/th1.png",
+                "res/th2.png",
+                "res/th3.png",
+                "res/th4.png",
+                "res/th5.png"
+            ];
+            let currentIndex = 0;
+
+            function changeImage() {
+                const imgElement = $('#image');
+                imgElement.css('opacity', 0); 
+                setTimeout(() => {
+                    imgElement.attr('src', images[currentIndex]);
+                    imgElement.css('opacity', 1); 
+                }, 1000); 
+            }
+
+            setInterval(changeImage, 3000); 
+
+        
+            $('.right button').eq(0).click(function() {
+                window.location.href = 'ex3.html';
+            });
+            $('.right button').eq(1).click(function() {
+                window.location.href = 'ex5-0.html';
+            });
+            $('.right button').eq(2).click(function() {
+                window.location.href = 'ex4-0.html';
+            });
+
+            $('.left .return-button').click(function() {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
